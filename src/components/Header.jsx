@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Header() {
   return (
@@ -7,8 +7,8 @@ export default function Header() {
         <Link to='/' className='logo'>Eli John</Link>
 
         <nav className='navbar'>
-            <Link to='/' className='active'>Home</Link>
-            <Link to='/projects'>Projects</Link>
+            <NavLink className={({isActive})=> isActive ? "active" : null} to='/'>Home</NavLink>
+            <NavLink className={({isActive})=> isActive ? "active" : null} to='/projects'>Projects</NavLink>
             <Link to='/#contacts'>Contacts</Link>
         </nav>
     </header>

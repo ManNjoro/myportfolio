@@ -1,40 +1,28 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
-export default function Projects() {
+export default function Projects(props) {
+  const styles = {
+    width: "20rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    border: "1px solid #ddd", // Faint border
+    borderRadius: "5px", // Rounded corners
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    height: "350px"
+  };
   return (
-    <section id="projects">
-      <div className="container">
-        <h2 className="project-tile">These are some of my works</h2>
-        <div className="cards">
-          <div className="card">
-            <a href="https://mannjoro.github.io/akanp/">
-              <img src="assets/img/akan.png" alt="akan names" />
-              <div className="card-description">
-                <h3>Akan Names</h3>
-                <p>Description of Akan Names project goes here.</p>
-              </div>
-            </a>
-          </div>
-          <div className="card">
-            <a href="https://mannjoro.github.io/duka/">
-              <img src="assets/img/duka.png" alt="duka" />
-              <div className="card-description">
-                <h3>Duka</h3>
-                <p>Description of Duka project goes here.</p>
-              </div>
-            </a>
-          </div>
-          <div className="card">
-            <a href="https://mannjoro.github.io/parlour/">
-              <img src="assets/img/parlour.png" alt="Beauty parlour" />
-              <div className="card-description">
-                <h3>Beauty Parlour</h3>
-                <p>Description of Beauty Parlour project goes here.</p>
-              </div>
-            </a>
+    <>
+      <Link to={props.url}>
+        <div className="card" style={styles}>
+          <img src={props.img} className="card-img-top" alt="project photo" />
+          <div class="card-body">
+            <h2 className="card-title text">{props.name}</h2>
+            <p className="card-text text">{props.description}</p>
           </div>
         </div>
-      </div>
-    </section>
+      </Link>
+    </>
   );
 }
