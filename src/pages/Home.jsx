@@ -4,7 +4,7 @@ import { FaGithub, FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
   return (
-    <section className="home">
+    <section>
       <div className="home-content">
         <h1>Hi, I'm Eli John Gachago</h1>
         <h3>Fullstack Software Engineer</h3>
@@ -22,7 +22,6 @@ export default function Home() {
       </div>
 
       <div className="home-sci">
-        <a href="#"><BiLogoFacebook /></a>
         <a href="#"><FaXTwitter /></a>
         <a href="#"><BiLogoLinkedin /></a>
         <a href="#"><FaGithub /></a>
