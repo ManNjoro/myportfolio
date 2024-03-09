@@ -1,4 +1,6 @@
 import React from "react";
+import { BiLogoFacebook, BiLogoLinkedin } from "react-icons/bi";
+import { FaGithub, FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
   return (
@@ -15,8 +17,15 @@ export default function Home() {
         </p>
         <div className="btn-box">
           <a href="#">Hire me</a>
-          <a href="#">Let's'Talk</a>
+          <a href="#">Let's Talk</a>
         </div>
+      </div>
+
+      <div className="home-sci">
+        <a href="#"><BiLogoFacebook /></a>
+        <a href="#"><FaXTwitter /></a>
+        <a href="#"><BiLogoLinkedin /></a>
+        <a href="#"><FaGithub /></a>
       </div>
     </section>
   );
