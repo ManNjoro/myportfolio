@@ -23,14 +23,20 @@ Hi, I'm Eli John Gachago, a Fullstack Software Engineer passionate about creatin
 
 To run this project locally, follow these steps:
 
-1. Clone this repository. `git clone `
+1. Clone this repository. 
+    ```bash
+    git clone https://github.com/ManNjoro/myportfolio.git
+    ```
 2. Navigate to the project directory.
+    ```bash
+    cd myportfolio
+    ```
 3. Install dependencies using npm:
 
    ```bash
    npm install
    ```
 4. Start the development server:
- ```bash
- npm run dev
- ```
+    ```bash
+    npm run dev
+    ```
