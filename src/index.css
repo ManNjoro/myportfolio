@@ -301,6 +301,10 @@ body {
   height: auto;
 }
 
+.card-title {
+  color: #00abf0;
+}
+
 .text {
   overflow: "hidden";
   text-overflow: "ellipsis";
