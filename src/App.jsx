@@ -36,7 +36,7 @@ const router = createBrowserRouter(
               <h2 className="project-tile">These are some of my Projects</h2>
               <div className="cards">{elements}</div>
               <p className="more-info">
-                <h3>Check out more projects on my <Link className="card-title" to='https://github.com/ManNjoro?tab=repositories'>Github Account</Link></h3>
+                <span>Check out more projects on my <Link className="card-title" to='https://github.com/ManNjoro?tab=repositories'>Github Account</Link></span>
               </p>
             </div>
           </section>

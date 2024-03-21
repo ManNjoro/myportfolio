@@ -311,18 +311,19 @@ body {
   width: 20rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   border: 1px solid #ddd;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 350px;
+  /* height: 300px; */
 }
 .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  gap: 20px;
+  /* justify-content: space-between; */
   height: 100%;
-  padding: .5em;
+  padding: 1em;
 }
 
 .card-img-top {
@@ -334,11 +335,60 @@ body {
   color: #00abf0;
 }
 
-.text {
-  overflow: "hidden";
-  text-overflow: "ellipsis";
-  white-space: "nowrap";
+
+.card-text {
+  --max-lines : 2;
+  --line-height: 1.4;
+
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+  overflow: hidden;
+  position: relative;
 }
+
+.card-text:has(+ .expand-btn:not(:checked))::before {
+  content: "";
+  position: absolute;
+  height: calc(1em * var(--line-height));
+  width: 100%;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, #081b29);
+}
+
+.expand-btn {
+  appearance: none;
+  border: 1px solid #fff;
+  padding: .5em;
+  border-radius: .25em;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 30%;
+  color: #fff;
+  text-align: center;
+}
+
+.expand-btn:hover {
+  background-color: #CCC;
+  color: #000;
+}
+
+.expand-btn::before {
+  content: "Expand";
+}
+
+.expand-btn:checked::before {
+  content: "Collapse";
+}
+
+.card-title:has(+ .expand-btn:checked) {
+  max-height: none;
+}
+
+.card-text:has(+ .expand-btn:checked) {
+  max-height: none;
+}
+
 a {
   text-decoration: none;
   color: inherit;
