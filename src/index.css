@@ -303,8 +303,9 @@ body {
 .cards {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Two columns, each with a minimum width of 300px */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Two columns, each with a minimum width of 300px */
   gap: 20px;
+  align-items: flex-start;
 }
 
 .card {
@@ -312,9 +313,11 @@ body {
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
+  background-color: #0a2335;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
   /* height: 300px; */
 }
 .card-body {
@@ -328,7 +331,16 @@ body {
 
 .card-img-top {
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  max-height: 200px;
+  transition: 200ms transform ease-in-out;
+}
+
+.card-img-top:hover {
+  transform: scale(1.025);
 }
 
 .card-title {
@@ -356,7 +368,7 @@ body {
   width: 100%;
   bottom: 0;
   pointer-events: none;
-  background: linear-gradient(to bottom, transparent, #081b29);
+  background: linear-gradient(to bottom, transparent, #0a2335);
 }
 
 .expand-btn {
