@@ -348,6 +348,17 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  pointer-events: none;
+}
+
+.card-title {
+  --max-lines : 1;
+  --line-height: 1.4;
+
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+  overflow: hidden;
+  position: relative;
 }
 
 
@@ -396,8 +407,11 @@ body {
   content: "Collapse";
 }
 
-.card-title:has(+ .expand-btn:checked) {
+.card-title:has(~ .expand-btn:checked) {
   max-height: none;
+  overflow: none;
+  text-overflow: none;
+  white-space: wrap;
 }
 
 .card-text:has(+ .expand-btn:checked) {
